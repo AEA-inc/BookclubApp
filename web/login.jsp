@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="o"%>
 <html>
 <head>
     <link
@@ -45,12 +46,14 @@
     <div class="container">
 
         <div class="jumbotron">
+
             <h1 class="display-4">login and Shop!</h1>
             <form>
                 <div class="form-group row">
                     <label for="userEmail" class="col-sm-2 col-form-label">User Name</label>
                     <div class="col-sm-10">
                         <input name="username" type="email" class="form-control" id="userEmail" aria-describedby="emailHelp" placeholder="Enter email">
+
                     </div>
                 </div>
                 <div class="form-group row">
@@ -73,7 +76,9 @@
                     <label class="form-check-label" for="exampleCheck1">Remember Me</label>
                 </div>
                 <button type="submit" class="btn btn-primary">Login</button>
+
             </form>
+            <span> <o:out value="${errmsg}"/></span>
         </div>
     </div>
 </main>
@@ -82,6 +87,7 @@
         <a class="text-light" href="#"> CS472 Final Project</a>
     </div>
 </footer>
+
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
