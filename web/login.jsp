@@ -20,8 +20,8 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-    <a href="#" class="navbar-brand">Shop For Fun
-        <!--<img src="http://placehold.it/150x50?text=Logo" alt="Shop Logo">-->
+    <a href="#" class="navbar-brand">Enjoy Reading
+        <!--<img src="http://placehold.it/150x50?text=Logo" alt="book Logo">-->
     </a>
     <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
         <span class="navbar-toggler-icon"></span>
@@ -45,7 +45,7 @@
     <div class="container">
 
         <div class="jumbotron">
-            <h1 class="display-4">login and Shop!</h1>
+            <h1 class="display-4">login and Read!</h1>
             <form>
                 <div class="form-group row">
                     <label for="userEmail" class="col-sm-2 col-form-label">User Name</label>

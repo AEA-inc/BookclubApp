@@ -1,5 +1,32 @@
 $(function () {
     $('#datetimepicker1').dateTime;
+
+//Slider
+    // Activate carousel
+    // $("#myCarousel").carousel();
+    //
+    //     // Enable carousel control
+    //     $(".carousel-control-prev").click(function () {
+    //         $("#myCarousel").carousel('prev');
+    //     });
+    //     $(".carousel-control-next").click(function () {
+    //         $("#myCarousel").carousel('next');
+    //     });
+    //
+    //     // Enable carousel indicators
+    //     $(".slide-one").click(function () {
+    //         $("#myCarousel").carousel(0);
+    //     });
+    //     $(".slide-two").click(function () {
+    //         $("#myCarousel").carousel(1);
+    //     });
+    //     $(".slide-three").click(function () {
+    //         $("#myCarousel").carousel(2);
+    //     });
+    //     $(".slide-four").click(function () {
+    //         $("#myCarousel").carousel(3);
+    //     });
+
 //submit member registration info
     $('#btnregsubmit').click(function(){
         var fname = $("#firstname").val();
@@ -22,32 +49,29 @@ $(function () {
 
         }
         function addMember(){
-            var member = {firstName:fname, lastName:lname,emailAdd:email,password:password};
-            $ajax({
-                url:'RegisterServlet.jsp',
-                type:'POST',
-                data:{member:JSON.stringify(member)},
-                dataType: "json",
-                success:function (response) {alert("success")},
-                error:function (response) {
-                    alert("Error:Timeout please try again later");
-                },
-            });
 
-
-            //$.post('member',{member: JSON.stringify(member)},"json")
+           // var member = {firstName:fname, lastName:lname,emailAdd:email,password:password};
+            $.ajax("member", {
+                "type": "POST",
+                "data": {
+                    "fname": fname,"lname":lname,"email":email,"password":password,
+                    "action":"addmember"
+                }
+            }) .done(function (response) {
+                let me = $(this);
+                $("#success_msg ").html("");
+                $("#success_msg").css("display","block")
+                    .append($("<span>").css("colot","white").
+                    text(JSON.parse(response).prodName+"Successfully removed from your cart!"));
+                $(this).css("color","red")
+                alert($(this).html())
+                event.preventDefault();
+            })
+                .fail(function (xhr, status, exception) {
+                    console.log(xhr, status, exception);
+                    //  alert("err")
+                });
         }
-
-
     })//end of register
-
-
-
-
-
-
-
-
-
 
 });

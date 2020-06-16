@@ -10,25 +10,27 @@ import java.util.Map;
 //import static Model.Role.MEMBER;
 
 public class MemberDao {
+
     Map<String, Member> memberDb = new HashMap<>();
 
-    {
+   {
        memberDb.put("awordofa@miu.edu", new Member("Addisalem","Wordofa" ,"awordofa@miu.edu","Addis123"));
+       memberDb.put("akiros@miu.edu", new Member("Adiam","Kiros" ,"akiros@miu.edu","Adi123"));
+       memberDb.put("ekwizera@miu.edu", new Member("Emelyne","Kwizera" ,"ekwizera@miu.edu","Eme123"));
 
-    }
+   }
 
-    public boolean addMember(Member member) {
-        boolean check=false;
-        if (memberDb == null) {
+    public String addMember(Member member) {
+        String msg;
+        boolean check=findByEmail(member.getEmailAdd());
+        if( check==false){
             memberDb.put(member.getEmailAdd(), member);
+            msg="SUCCESS";
         }
-        else {
-             check = findByEmail(member.getEmailAdd());
-            if (check == true) {
-                memberDb.put(member.getEmailAdd(), member);
-            }
+        else{
+            msg="FAILLER";
         }
-        return check;
+        return msg;
     }
 
     public void deleteProduct(int productId){
@@ -49,6 +51,5 @@ public class MemberDao {
 
     public boolean findByEmail(String email){
         return memberDb.containsKey(email);
-
     }
 }

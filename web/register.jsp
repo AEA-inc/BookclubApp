@@ -20,8 +20,8 @@
 <div class="container">
     <br>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-        <a href="#" class="navbar-brand">Shop For Fun
-            <!--<img src="http://placehold.it/150x50?text=Logo" alt="Shop Logo">-->
+        <a href="#" class="navbar-brand">Enjoy Reading
+            <!--<img src="http://placehold.it/150x50?text=Logo" alt="book club logo">-->
         </a>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
             <span class="navbar-toggler-icon"></span>
@@ -33,9 +33,6 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="login.jsp">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="register.jsp">Sign Up</a>
                 </li>
             </ul>
         </div>
@@ -64,7 +61,7 @@
                 <div class="form-group">
                     <button type="submit" name="submit" id="btnregsubmit" class="btn btn-primary btn-block"> Create Account  </button>
                 </div> <!-- form-group// -->
-                <p class="text-center">Have an account? <a href="">Log In</a> </p>
+                <p class="text-center">Have an account? <a href="login.jsp">Log In</a> </p>
             </form>
         </article>
     </div> <!-- card.// -->

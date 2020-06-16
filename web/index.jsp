@@ -21,8 +21,8 @@
 <body>
 
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-        <a href="#" class="navbar-brand">Shop For Fun
-            <!--<img src="http://placehold.it/150x50?text=Logo" alt="Shop Logo">-->
+        <a href="#" class="navbar-brand">Enjoy Reading
+            <!--<img src="http://placehold.it/150x50?text=Logo" alt="Bookclub logo">-->
         </a>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
             <span class="navbar-toggler-icon"></span>
@@ -43,10 +43,56 @@
 
     </nav>
 <main>
-    <div class="container">
-        <h1 class="display-4">Have Fun and Shop!</h1>
+    <div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
+        <!-- Carousel indicators -->
+        <ol class="carousel-indicators">
+            <li class="slide-one"></li>
+            <li class="slide-two"></li>
+            <li class="slide-three"></li>
+            <li class="slide-four"></li>
+
+        </ol>
+        <!-- Wrapper for carousel items -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/resources/images/img4.png" alt="First Slide" width="200" height="280">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>First slide label</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="resources/images/img2.png" alt="Second Slide" width="200" height="280">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Second slide label</h5>
+                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="resources/images/img3.png" alt="Third Slide" width="200" height="280">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>First slide label</h5>
+                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="resources/images/img4.png" alt="Fourth Slide" width="200" height="280">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>First slide label</h5>
+                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Carousel controls -->
+        <a class="carousel-control-prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
     </div>
 </main>
+
 <footer class="page-footer font-small">
     <div class="footer-copyright text-center py-3">&copy; 2020 Copyright:
         <a class="text-light" href="#"> CS472 Final Project</a>

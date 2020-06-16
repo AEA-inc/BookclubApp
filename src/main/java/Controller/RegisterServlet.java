@@ -4,6 +4,7 @@ import Dao.MemberDao;
 import Model.Member;
 import com.google.gson.Gson;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,30 +13,30 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/RegisterServlet")
+@WebServlet("/member")
 public class RegisterServlet extends HttpServlet {
 
     public RegisterServlet() {
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         MemberDao memberDao = new MemberDao();
-        Gson mapper = new Gson();
-        String jsonSting = request.getParameter("member");
-       System.out.println("here servlet");
-        Member member = mapper.fromJson(request.getParameter("jsonPostRequest"), Member.class);
-        memberDao.addMember(member);
-        PrintWriter out = response.getWriter();
-        out.print(mapper.toJson(member));
-//        //The core Logic of the Registration application is present here. We are going to insert user data in to the database.
-//        boolean memberRegistered = memberDao.addMember(member);
-//        System.out.println(memberRegistered);
-//        if(memberRegistered==true){
-//            request.getRequestDispatcher("member.jsp").forward(request, response);
-//        }
-//        else   //On Failure, display a meaningful message to the User.
-//        {
+        String firstname= request.getParameter("fname");
+        String lastname=request.getParameter("lname");
+        String email=request.getParameter("email");
+        String password=request.getParameter("password");
+        Member member=new Member(firstname,lastname,email,password);
+        String memberRegistered = memberDao.addMember(member);
+       System.out.println(memberRegistered);
+        if(memberRegistered.equals("SUCCESS"))
+        {
+           
+            response.sendRedirect("/welcome.jsp");
+        }
+        else
+        {
+            response.sendRedirect("/register.jsp");
 //            request.setAttribute("errMessage", memberRegistered);
-//            request.getRequestDispatcher("register.jsp").forward(request, response);
-//        }
+//            request.getRequestDispatcher("/register.jsp").forward(request, response);
+        }
     }
 }
