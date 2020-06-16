@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Bootstrap 4 Introduction</title>
+    <title>Book Checkout</title>
     <link
             rel="stylesheet"
             href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -21,12 +21,10 @@
             crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./resources/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript" src="scripts/moment-2.4.0.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" />
     <script src="./resources/scripts.js"></script>
 </head>
 
@@ -50,7 +48,7 @@
                 <a class="nav-link" href="#">View Books</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Checkin Books</a>
+                <a class="nav-link" href="MemberBookReturn.jsp">Checkin Books</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Cart</a>
@@ -64,7 +62,7 @@
 
         <div class="jumbotron">
             <h1 class="display-4">Checkout Book</h1>
-            <form>
+            <form action="checkout" method="post">
                 <div class="form-group row">
                     <label for="bookISBN" class="col-sm-2 col-form-label">Book ISBN</label>
                     <div class="col-sm-10">
@@ -84,25 +82,14 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="copyNumber" class="col-sm-2 col-form-label">Number of copy</label>
-                    <div class="col-sm-10">
-                        <input name="copies" type="text" class="form-control" id="copyNumber" placeholder="Enter number of copy">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="copyNumber" class="col-sm-2 col-form-label">Choose Date</label>
+                    <label for="datetimepicker1" class="col-sm-2 col-form-label">Choose Date</label>
                     <div class='col-sm-10'>
-                        <div class="form-group">
-                            <div class='input-group date' id='datetimepicker1'>
-                                <input type='text' class="form-control" />
-                                <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
+                            <div class='input-group date'>
+                                <input type='text' class="form-control" id="datetimepicker1" aria-describedby="dateHelp" placeholder="Enter checkoutDate"/>
                             </div>
-                        </div>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Checkout</button>
+                <button type="submit" class="btn btn-primary" id="checkout">Checkout</button>
             </form>
         </div>
     </div>
